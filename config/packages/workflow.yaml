@@ -1,0 +1,38 @@
+framework:
+    workflows:
+        telegram_user_search_adding:
+            type: 'state_machine'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'currentPlace'
+            supports:
+                - App\Domain\Core\Entity\User
+            initial_place: start
+            places:
+                - start
+                - added_new_seach
+                - added_search_name
+                - added_search_link
+                - added_search_stop_words
+            transitions:
+                add_new_search:
+                    from: start
+                    to:   added_new_seach
+                add_search_link:
+                    from: added_new_seach
+                    to:   added_search_link
+                add_search_name:
+                    from: added_search_link
+                    to:   added_search_name
+                add_search_stop_words:
+                    from: added_search_name
+                    to:   added_search_stop_words
+                add_search_finish:
+                    from: [added_search_name, added_search_stop_words]
+                    to:   start
+                add_seach_cancel:
+                    from: [added_new_seach, added_search_name, added_search_link, added_search_stop_words]
+                    to:   start

@@ -1,0 +1,76 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'en'
+    app_domain: 'upworkee.com'
+    env(MERCURE_PUBLISH_URL): ''
+    env(MERCURE_JWT_SECRET): ''
+    knp_rad.domain_event.dispatcher.doctrine.class: App\Infrastructure\DomainEvent\DomainEventDispatcher
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    bind:
+      $telegramActionLogger: '@monolog.logger.telegram_actions'
+      $domainEventsListener: '@knp_rad.domain_event.dispatcher.doctrine'
+  App\Application\:
+    resource: '../src/Application/*'
+
+  App\Infrastructure\:
+    resource: '../src/Infrastructure/*'
+    exclude: '../src/Infrastructure/{Migrations}'
+
+  App\Ui\:
+    resource: '../src/Ui/*'
+
+  App\Infrastructure\Delivery\Web\:
+    resource: '../src/Infrastructure/Delivery/Web'
+    tags: ['controller.service_arguments']
+
+  App\Infrastructure\Delivery\Api\:
+    resource: '../src/Infrastructure/Delivery/Api'
+    tags: ['controller.service_arguments']
+
+  App\Domain\TelegramBot\TelegramApiInterface: '@App\Infrastructure\Integration\TelegramApi'
+  App\Domain\Payment\PaymentCallbackHandler: ~
+  App\Domain\Payment\PaymentGatewayInterface: '@App\Infrastructure\Integration\Payeer'
+
+  guzzle.client:
+    class: GuzzleHttp\Client
+  GuzzleHttp\Client: '@guzzle.client'
+
+  App\Infrastructure\Integration\UpworkRssRequester:
+    calls:
+      - ['setClient', ['@guzzle.client']]
+
+  App\Infrastructure\Integration\TelegramApi:
+    arguments:
+      - '%env(BOT_API_TOKEN)%'
+    calls:
+      - ['setClient', ['@guzzle.client']]
+
+  telegram_bot_logger:
+    class: App\Infrastructure\Integration\TelegramApi
+    arguments:
+      - '%env(TELEGRAM_BOT_LOGGER_TOKEN)%'
+    calls:
+      - ['setClient', ['@guzzle.client']]
+
+  App\Infrastructure\Integration\TelegramLoginChecker:
+    arguments:
+      - '%env(BOT_API_TOKEN)%'
+
+  App\Infrastructure\Integration\MailchimpSubscriber:
+    calls:
+      - ['setClient', ['@guzzle.client']]
+
+  App\Domain\Upwork\UpworkRequesterInterface: '@App\Infrastructure\Integration\UpworkRssRequester'
+
+  App\Application\TelegramBot\DomainEventSubscriber\ActivityEventSubscriber:
+    tags:
+      - { name: kernel.event_listener, event: App\Domain\Core\Event\UserEvent, method: 'onUserEvent' }
+      - { name: kernel.event_listener, event: App\Domain\Core\Event\OrderEvent, method: 'onOrderEvent' }

@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+
+  Money\Currencies\ISOCurrencies: ~
+  Money\Currencies: '@Money\Currencies\ISOCurrencies'
+  Money\Parser\DecimalMoneyParser: ~
+  Money\Formatter\DecimalMoneyFormatter: ~
+
+  NumberFormatter:
+    class: NumberFormatter
+    arguments:
+      - 'en_US'
+      - !php/const NumberFormatter::CURRENCY
+  Money\Formatter\IntlMoneyFormatter: ~

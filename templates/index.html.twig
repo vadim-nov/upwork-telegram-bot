@@ -1,0 +1,335 @@
+{% extends 'base.html.twig' %}
+{% block meta %}
+    <meta property="og:title" content="Upworkee - notifications about new jobs at Upwork"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ sitename }}"/>
+    <meta property="og:image"
+          content="/static/img/ad_og.jpg"/>
+    <meta property="og:description"
+          content="Get instant notifications about new upwork jobs in your telegram. Helps you to get a new freelance project or job"/>
+    <meta property="fb:app_id" content="2012452870397"/>
+{% endblock %}
+{% block body %}
+
+    <section class="section absolute shapes-section">
+        <div class="shapes-box">
+            <span data-parallax='{"x": 150, "y": -20, "rotateZ":500}'>
+                <b class="green"></b>
+            </span>
+            <span data-parallax='{"x": -20, "y": 180, "rotateZ":500}'>
+                <b class="yellow x4"></b>
+            </span>
+            <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                <b class="blue x1"></b>
+            </span>
+            <span data-parallax='{"x": 400, "y": 15, "rotateY":0}'>
+                <b class="pacman"></b>
+            </span>
+            <span data-parallax='{"x": -40, "y": 70}'>
+                <b class="theme x2"></b>
+            </span>
+            <span data-parallax='{"x": -250, "y": -180, "rotateZ":1500}'>
+                <b class="green-space"></b>
+            </span>
+            <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                <b class="yellow x4"></b>
+            </span>
+            <span data-parallax='{"x": 60, "y": -100}'>
+                <b class="green x3"></b>
+            </span>
+            <span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+                <b class="pink x3"></b>
+            </span>
+        </div>
+    </section>
+
+    <section id="home" class="home-banner gray-bg shapes-section">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6">
+                    <div class="hb-text">
+                        <h1 class="dark-color font-alt">
+                            Instant notifications about new
+                            <span style="color: #6bda42;">up</span><span style="color: #666666;">work</span>
+                            jobs
+                        </h1>
+                        <h1 class="small">Get freelance jobs and actual reviews smoothly. Apply faster than others.</h1>
+                        <div class="btn-bar">
+                            <a class="m-btn m-btn-theme btn-show-bot telegram" href="http://t.me/upworkee_bot"><span>Add telegram bot</span></a>
+                            <a class="m-btn m-btn-theme btn-show-bot chrome" href="https://chrome.google.com/webstore/detail/upworkee/cobgonadnfcjnpfdjleagjhppaboaeda?hl=ru"><span>Add chrome extension</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 md-p-15px-l p-50px-l m-100px-t main-screen-img">
+                    <div id="recent-updates-mountpoint"></div>
+                </div>
+            </div>
+        </div> <!-- container -->
+    </section>
+
+    <!--
+    =======================
+    Features
+    =======================
+    -->
+    <section class="section overflow-hidden" id="setup">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <video class="section-video" autoplay loop muted>
+                        <source src="/static/video/work-v3.webm" type="video/mp4">
+                    </video>
+                </div> <!-- col -->
+                <div class="col-lg-5">
+                    <div class="side-feature md-m-30px-b">
+                        <div class="feature-content">
+                            <h2 class="dark-color font-alt">3 easy steps to apply first</h2>
+                            <p>1. Add bot to your <a href="https://telegram.org/">telegram</a></p>
+                            <p>2. Apply filters at <a href="https://www.upwork.com">upwork</a> you normally use and copy
+                                the URL link</p>
+                            <p>3. Paste the upwork search URL or just enter a keyword</p>
+                            <div class="read-more">
+                                <a class="m-btn m-btn-theme btn-show-bot telegram" href="http://t.me/upworkee_bot"><span>Add telegram bot</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+            </div> <!-- row -->
+        </div>
+    </section>
+
+    <!--
+    =======================
+    Features
+    =======================
+    -->
+
+    <section id="about" class="section gray-bg">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+                    <img src="/static/img/upworkee-using.jpg" title="Get new upwork project"
+                         alt="get notigications about new freelance jobs">
+                </div>
+                <div class="col-lg-5">
+                    <div class="side-feature md-m-30px-t">
+                        <div class="feature-content">
+                            <h2 class="dark-color font-alt">Why using upworkee</h2>
+                            <p>The best chance for getting client's attention is to send your cover letter within an
+                                hour after the job was posted.</p>
+
+                            <p>Clients will usually have a shortlist by then, and first set of shortlisted applicants
+                                will get
+                                interviewed and at least one will get hired.</p>
+
+                            <p>Those who didn't make the cut might not be viewed at all no matter how good the profile
+                                is, because
+                                most of the cases clients don't go back to the user list anymore.</p>
+
+                            <p>With notifications from our bot you will have an opportunity to be always in the
+                                shortlist and
+                                significantly increase chances to get hired. <br></p>
+                            <div class="btn-bar">
+                                <a class="m-btn m-btn-theme btn-show-bot telegram" href="http://t.me/upworkee_bot"><span>Add telegram bot</span></a>
+                                <a class="m-btn m-btn-theme btn-show-bot chrome" href="https://chrome.google.com/webstore/detail/upworkee/cobgonadnfcjnpfdjleagjhppaboaeda?hl=ru"><span>Add chrome extension</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div>
+    </section>
+
+    <section class="section theme-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-8">
+                    <div class="section-title text-center">
+                        <h4 class="white-color font-alt">First applicants get more clients' attention at Upwork
+                            - don't miss a new job posting</h4>
+                        <div class="read-more" style="margin-top: 30px;">
+                            <a class="m-btn m-btn-t-white" href="http://t.me/upworkee_bot">Setup notifications</a>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+            </div> <!-- row -->
+        </div>
+    </section>
+
+    <!--
+   =======================
+   Price Table
+   =======================
+   -->
+    <section class="section gray-bg" id="price">
+        <div class="container">
+            <div class="row m-45px-b sm-m-25px-b justify-content-center">
+                <div class="col-md-8 col-lg-8">
+                    <div class="section-title text-center">
+                        <h3 class="dark-color font-alt">Select your plan</h3>
+                        <p class="large-text">We have the following pricing plans.
+                            Please, select, what amount of searches you will need and how frequent you would like to get
+                            notified about the new upwork jobs.</p>
+                    </div>
+                </div> <!-- col -->
+            </div> <!-- row -->
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 m-15px-tb">
+                    <div class="price-table">
+                        <div class="icon"><img src="/static/img/bike.svg" title="" alt=""></div>
+                        <div class="pt-head"><h6 class="dark-color font-alt">Starter</h6>
+                            <div class="pt-price theme-color">FREE</div>
+                        </div>
+                        <div class="pt-body">
+                            <ul>
+                                <li>1 search</li>
+                                <li class="pt-no">Every 15 mins update</li>
+                            </ul>
+                        </div>
+                        <div class="pt-btn">
+                            <div>
+                                <a href="{{ path('settings') }}" class="m-btn m-btn-theme">Start free
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 m-15px-tb">
+                    <div class="price-table">
+                        <div class="icon"><img src="/static/img/scooter.svg" title="" alt=""></div>
+                        <div class="pt-head"><h6 class="dark-color font-alt">Standard</h6>
+                            <div class="pt-price theme-color">$5<span>/Month</span></div>
+                        </div>
+                        <div class="pt-body">
+                            <ul>
+                                <li>2 searches</li>
+                                <li class="pt-no">Every 5 mins update</li>
+                            </ul>
+                        </div>
+                        <div class="pt-btn">
+                            <div>
+                                <a href="{{ path('settings') }}" class="m-btn m-btn-theme">Choose
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 m-15px-tb">
+                    <div class="price-table">
+                        <div class="icon"><img src="/static/img/car.svg" title="" alt=""></div>
+                        <div class="pt-head"><h6 class="dark-color font-alt">Premium</h6>
+                            <div class="pt-price theme-color">$10<span>/Month</span></div>
+                        </div>
+                        <div class="pt-body">
+                            <ul>
+                                <li>3 searches</li>
+                                <li class="pt-no">Every minute update</li>
+                            </ul>
+                        </div>
+                        <div class="pt-btn">
+                            <div>
+                                <a href="{{ path('settings') }}" class="m-btn m-btn-theme">Choose
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- row -->
+    </section>
+
+    <section class="section theme-bg" style="padding: 60px 0;">
+        <div class="container">
+
+            <div class="row justify-content-between counter">
+                <div class="col-lg-3 col-md-6 m-15px-tb text-center">
+                    <div class="box-01">
+                        <h1 class="count white-color" data-to="{{statistics.users}}">{{statistics.users}}</h1>
+                        <div class="feature-content">
+                            <h3 class="white-color">Users</h3>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-3 col-md-6 m-15px-tb text-center">
+                    <div class="box-01">
+                        <h1 class="count white-color" data-to="{{statistics.searches}}">{{statistics.searches}}</h1>
+                        <div class="feature-content">
+                            <h3 class="white-color">Search URLs</h3>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-3 col-md-6 m-15px-tb text-center">
+                    <div class="box-01">
+                        <h1 class="count white-color" data-to="{{statistics.postings}}">{{statistics.postings}}</h1>
+                        <div class="feature-content">
+                            <h3 class="white-color">Job postings per min</h3>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+
+                <div class="col-lg-3 col-md-6 m-15px-tb text-center">
+                    <div class="box-01">
+                        <h1 class="count white-color" data-to="{{statistics.premium_users}}">{{statistics.premium_users}}</h1>
+                        <div class="feature-content">
+                            <h3 class="white-color">Premium users</h3>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+            </div> <!-- row -->
+        </div>
+    </section>
+
+    <section class="section" id="subscribe">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-8">
+                    <div class="section-title text-center">
+                        <h2 class="dark-color font-alt">Stay connected</h2>
+                        <h3 class="dark-color font-alt" style="margin-top:15px;">
+                            <img src="/static/img/freelancer.png" style="width: 40px;">
+                            Freelance.com feed is coming
+                        </h3>
+                        <p class="large-text">Leave your email to be the first to know about latest news, insights and
+                            updates.
+                        </p>
+                    </div>
+                </div> <!-- col -->
+            </div> <!-- row -->
+
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div id="subscribe-widget-mountpoint">
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div>
+    </section>
+    <section class="section gray-bg" id="contactform">
+        <div class="container">
+            <div class="row m-45px-b sm-m-25px-b justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="section-title text-center">
+                        <h3 class="dark-color font-alt">Contact us</h3>
+                        <p class="large-text">We'd love to hear from you!</p>
+                    </div>
+                </div> <!-- col -->
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="contact-form box-shadow white-bg">
+                        <div id="contactform-mountpoint"></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 d-none d-lg-block">
+                    <img src="/static/img/mailbox-14.png" alt="mailbox" title="">
+                </div>
+            </div> <!-- row -->
+        </div>
+    </section>
+{% endblock %}

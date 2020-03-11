@@ -1,0 +1,39 @@
+main {
+    padding-top: 78px;
+    min-height: calc(100vh - 65px);
+}
+
+.section-video {
+    width: 90%;
+    position: relative;
+    z-index: 2;
+}
+
+.main-screen-img {
+    margin-top: 15%;
+    padding: 0;
+
+    @media screen and (max-width: 990px) {
+        margin-top: 25%;
+    }
+
+    @media screen and (max-width: 600px) {
+        margin-top: 35%;
+        padding: 60px 0 0;
+    }
+}
+
+@media screen and (max-width: 411px) {
+
+    .home-banner .btn-bar {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        a {
+            width: 220px;
+            text-align: center;
+            margin: 0 0 16px 0 !important;
+        }
+    }
+}

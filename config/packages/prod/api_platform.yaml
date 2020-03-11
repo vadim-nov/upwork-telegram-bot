@@ -1,0 +1,6 @@
+api_platform:
+    http_cache:
+        max_age: 0
+        shared_max_age: 50
+        vary: ['Content-Type', 'Authorization']
+        public: true

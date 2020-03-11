@@ -1,0 +1,17 @@
+parameters:
+  app_domain: 'localhost'
+services:
+  _defaults:
+    public: false
+
+  App\Tests\Infrastructure\Integration\TelegramApiMock:
+    decorates: App\Infrastructure\Integration\TelegramApi
+  telegram_bot_logger:
+    alias: App\Tests\Infrastructure\Integration\TelegramApiMock
+  App\Tests\Infrastructure\Integration\UpworkRssRequesterMock:
+    decorates: App\Infrastructure\Integration\UpworkRssRequester
+    arguments: ['@App\Tests\Infrastructure\Integration\UpworkRssRequesterMock.inner']
+
+  App\Tests\Infrastructure\Integration\PayeerMock:
+    decorates: App\Domain\Payment\PaymentGatewayInterface
+    arguments: ['@App\Tests\Infrastructure\Integration\PayeerMock.inner']

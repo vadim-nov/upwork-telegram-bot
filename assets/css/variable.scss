@@ -1,0 +1,37 @@
+// Color system
+//$px-theme:					#5e61e7 !default; // Main theme color color 01
+$px-theme:						#3d59e8 !default; // Main theme color color 01
+
+$px-body-color:					#696969 !default; // Body text color
+$px-black:						#000000 !default; 
+$px-white:						#ffffff !default;
+$px-dark:						#2e3280 !default; // Dark Text Color
+$px-extra-dark:					#2e3280 !default; // Extra Dark Text Color
+$px-gray:                       #f3f3fb !default; // Gray Color New
+$px-gray-old:					#f5f7fd !default; // Gray Color
+$px-bot-green:                  #6bda42 !default;
+
+// Font system
+$px-base-font:					15px !default;
+$px-h1-font:                	48px !default;
+$px-h2-font:                	40px !default;
+$px-h3-font:                	32px !default;
+$px-h4-font:                	24px !default;
+$px-h5-font:                	20px !default;
+$px-h6-font:                	$px-base-font !default;
+
+$px-font-family:				'Roboto', sans-serif; // Main Font Family
+$px-font-family-alt:			'Rubik', sans-serif;	  // Alternative Font Family	
+
+
+// Custom Bg
+$px-yellow:						#ffbc5c !default;
+$px-green:						#1edee4 !default;
+$px-blue:						#255cff !default;
+$px-pink:						#ff2560 !default;
+
+
+// Breakpoints
+$px-media-sm:					767px !default;
+$px-media-md:					991px !default;
+$px-media-lg:					1200px !default;

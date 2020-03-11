@@ -1,0 +1,32 @@
+security:
+    encoders:
+        App\Domain\Core\Entity\User:
+            algorithm: argon2i
+    providers:
+        app.user_provider:
+            entity:
+                class: App\Domain\Core\Entity\User
+                property: username
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: true
+            guard:
+                entry_point: App\Infrastructure\Security\AppAuthenticator
+                authenticators:
+                    - App\Infrastructure\Security\AppAuthenticator
+                    - App\Infrastructure\Security\GithubAuthenticator
+                    - App\Infrastructure\Security\FacebookAuthenticator
+                    - App\Infrastructure\Security\GoogleAuthenticator
+                    - lexik_jwt_authentication.jwt_token_authenticator
+            logout: ~
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/settings, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/plan, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/docs, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }

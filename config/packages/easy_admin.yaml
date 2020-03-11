@@ -1,0 +1,39 @@
+easy_admin:
+  site_name: 'Upworkee admin'
+
+  entities:
+
+    User:
+      class: App\Domain\Core\Entity\User
+      controller: App\Infrastructure\EasyAdmin\Controller\UserController
+      list:
+        actions: ['-new', '-edit', '-delete', 'editPlan', {name: 'resetPlace', 'css_class': 'text-danger'}]
+        fields: ['username', 'email', 'createdAt', 'currentPlace', 'currentPlan', 'currentPlanFrom', 'currentPlanTo']
+
+        sort: ['createdAt', 'DESC']
+    TelegramMessageLog:
+      class: App\Domain\TelegramBot\Entity\TelegramMessageLog
+      list:
+        actions: ['-new', '-edit']
+        sort: ['createdAt', 'DESC']
+        fields: ['id', 'createdAt',{property: 'text', template: 'admin/telegram_message_log_text.html.twig'},'user']
+
+    UserSearch:
+      list:
+        actions: ['-new']
+      form:
+        fields: ['searchName', 'stopWords', 'searchUrl','isPending']
+      class: App\Domain\Core\Entity\UserSearch
+
+
+    Order:
+      class: App\Domain\Core\Entity\Order
+      list:
+        actions: ['-new', '-edit']
+        sort: ['createdAt', 'DESC']
+
+    UpworkJob:
+      class: App\Domain\Upwork\Entity\UpworkJob
+      list:
+        actions: ['-new', '-edit']
+        sort: ['createdAt', 'DESC']

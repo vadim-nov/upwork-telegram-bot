@@ -1,0 +1,141 @@
+/*-----------------------
+*	Footer
+-------------------------*/
+.footer {
+	background: #2D323D;
+	color: #98a2aa;
+
+	a {
+		color: $px-white;
+	}
+
+	.footer-top {
+		padding: 40px 0;
+		background: $px-theme;
+		h2 {
+			font-weight: 500;
+			font-size: 22px;
+			color: $px-white;
+			letter-spacing: 1px;
+			margin: 0;
+			@include down-md {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.social-icons {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			display: inline-block;
+			margin-right: 10px;
+		}
+		a {
+			color: rgba($px-white, 0.7);
+			@include px-hover {
+				color: $px-white;
+			}
+		}
+	}
+
+	.footer-middle {
+		padding: 80px 0;
+		border-bottom: 1px solid rgba($px-white, 0.15);	
+		@include down-md {
+			padding: 40px 0;
+		}
+		@include down-sm {
+			padding: 20px 0;
+		}
+		.newsletter-box {
+			position: relative;
+			margin-right: 15%;
+			margin-top: 25px;
+			@include down-sm {
+				margin-right: 0;
+			}
+			.form-control {
+				border-radius: 0;
+				height: 48px;
+				border: none;
+				box-shadow: none !important;
+				background: $px-white;
+				font-size: 14px;
+			    width: calc(100% - 75px);
+			    border-radius: 30px;
+			    padding-left: 25px;
+			}
+			.m-btn {
+		        position: absolute;
+			    top: 0;
+			    right: 0;
+			    padding: 0;
+			    width: 60px;
+			    height: 48px;
+			    box-shadow: none;
+			    line-height: 38px;
+			    border-radius: 25px;
+			    i {
+			    	margin: 0;
+			    }
+			}
+		}
+
+		h6 {
+			color: $px-white;
+			font-size: 16px;
+			text-transform: uppercase;
+			margin: 0 0 20px;
+			letter-spacing: 1px;
+		}
+		.nav {
+			li:not(:last-child) {
+				margin-bottom: 8px;
+			}
+			p{
+				color: #98a2aa;
+				&:last-child {
+					margin:0;
+				}
+			}
+			a {
+				color: #98a2aa;
+			    font-size: 14px;
+			    letter-spacing: 1px;
+			    display: inline-block;
+			    vertical-align: top;
+			    position: relative;
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					width: 0px;
+					height: 1px;
+					left: 0;
+					background: rgba($px-white,0.48);
+					@include transition(ease all 0.55s);
+				}
+				@include px-hover {
+					color: $px-white;
+					&:after {
+						width:100%;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-bottom {
+		padding: 20px 0;
+		p {
+			margin: 0;
+		    font-size: 14px;
+			font-weight: 400;
+			@include down-md {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}

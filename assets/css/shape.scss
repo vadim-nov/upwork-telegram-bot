@@ -1,0 +1,165 @@
+/* ----------------------
+*	Shapes Section
+---------------------------*/
+.shapes-section {
+    position: relative;
+    overflow: hidden;
+
+    .shapes-box {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+
+        span {
+            position: absolute;
+
+            b {
+                //width: 20px;
+                //height: 20px;
+                //border-radius: 50%;
+                //box-shadow: 0px 20px 24px 0px currentColor;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 18px solid currentColor;
+                //filter: drop-shadow(0 0 1rem currentColor);
+                display: inline-block;
+                opacity: 0.5;
+
+                &.green {
+                    color: $px-green;
+                    //background: $px-green;
+                }
+
+                &.yellow {
+                    color: $px-yellow;
+                    //background: $px-yellow;
+                }
+
+                &.pink {
+                    color: $px-pink;
+                    //background: $px-pink;
+                }
+
+                &.blue {
+                    color: $px-blue;
+                    //background: $px-blue;
+                }
+
+                &.theme {
+                    color: $px-theme;
+                    //background: $px-theme;
+                }
+
+                &.green-space {
+                    color: $px-green;
+                    //background: $px-pink;
+                    box-shadow: 0 0 0 1em currentColor,
+                    0 1em 0 1em currentColor,
+                    -2.5em 1.5em 0 .5em currentColor,
+                    2.5em 1.5em 0 .5em currentColor,
+                    -3em -3em 0 0 currentColor,
+                    3em -3em 0 0 currentColor,
+                    -2em -2em 0 0 currentColor,
+                    2em -2em 0 0 currentColor,
+                    -3em -1em 0 0 currentColor,
+                    -2em -1em 0 0 currentColor,
+                    2em -1em 0 0 currentColor,
+                    3em -1em 0 0 currentColor,
+                    -4em 0 0 0 currentColor,
+                    -3em 0 0 0 currentColor,
+                    3em 0 0 0 currentColor,
+                    4em 0 0 0 currentColor,
+                    -5em 1em 0 0 currentColor,
+                    -4em 1em 0 0 currentColor,
+                    4em 1em 0 0 currentColor,
+                    5em 1em 0 0 currentColor,
+                    -5em 2em 0 0 currentColor,
+                    5em 2em 0 0 currentColor,
+                    -5em 3em 0 0 currentColor,
+                    -3em 3em 0 0 currentColor,
+                    3em 3em 0 0 currentColor,
+                    5em 3em 0 0 currentColor,
+                    -2em 4em 0 0 currentColor,
+                    -1em 4em 0 0 currentColor,
+                    1em 4em 0 0 currentColor,
+                    2em 4em 0 0 currentColor;
+                    background: currentColor;
+                    width: 1em;
+                    height: 1em;
+                    overflow: hidden;
+                    transform: scale(0.2);
+                }
+
+                &.pacman {
+                    color: red;
+                    width: 0px;
+                    height: 0px;
+                    border-right: 60px solid transparent;
+                    border-top: 60px solid red;
+                    border-left: 60px solid red;
+                    border-bottom: 60px solid red;
+                    border-top-left-radius: 60px;
+                    border-top-right-radius: 60px;
+                    border-bottom-left-radius: 60px;
+                    border-bottom-right-radius: 60px;
+                    transform: rotate(5deg) scale(0.2);
+                }
+            }
+
+            &:nth-child(1) {
+                left: 4.8%;
+                top: 4.5%;
+            }
+
+            &:nth-child(2) {
+                left: 9.6%;
+                top: 27.2%;
+            }
+
+            &:nth-child(3) {
+                left: 8.8%;
+                bottom: 16%;
+            }
+
+            &:nth-child(4) {
+                //pacman
+                left: 20%;
+                bottom: 30%;
+            }
+
+            &:nth-child(5) {
+                right: 35%;
+                top: 6.6%;
+            }
+
+            &:nth-child(6) {
+                //invador
+                right: 28%;
+                bottom: 20%;
+            }
+
+            &:nth-child(7) {
+                right: 4%;
+                top: 62%;
+            }
+
+            &:nth-child(8) {
+                right: 56%;
+                top: 43%;
+            }
+
+            &:nth-child(9) {
+                right: 15%;
+                top: 10%;
+            }
+
+            &:nth-child(10) {
+                right: 25%;
+                bottom: 33%;
+            }
+        }
+    }
+}

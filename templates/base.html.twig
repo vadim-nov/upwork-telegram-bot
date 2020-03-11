@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{% block title %}Upworkee - notifications about new jobs at Upwork{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Get instant notifications about new upwork jobs in your telegram. Helps you to get
+          a new freelance project or job">
+    <meta name="keywords" content="notifications, telegram bot, new upwork jobs, freelance, freelance jobs, get new
+          project">
+    <meta name="apple-mobisle-web-app-capable" content="yes">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    {{ encore_entry_link_tags('app_scrypt') }}
+    {% block meta %}{% endblock %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    {% if env=='prod' %}
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+          (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {(m[i].a = m[i].a || []).push(arguments);};
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
+                k,
+                a);
+          })
+          (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+          ym(53644549, 'init', {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+          });
+        </script>
+        <noscript>
+            <div><img src="https://mc.yandex.ru/watch/53644549" style="position:absolute; left:-9999px;" alt=""/></div>
+        </noscript>
+        <!-- /Yandex.Metrika counter -->
+    {% endif %}
+</head>
+
+<!-- Body Start -->
+<body data-spy="scroll" data-target="#navbar" data-offset="98">
+
+
+<!-- Header -->
+<header class="header-nav">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Brand -->
+            <a class="" href="/">
+                <img src="/static/img/upworkee-dark.svg" style="height: 48px;">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+            </button>
+            <!-- / -->
+
+            <!-- Top Menu -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbar">
+                <ul class="navbar-nav ml-auto align-items-lg-center">
+                    {% if app.request.requestUri=='/' %}
+                        <li><a class="nav-link smooth-scroll" href="#setup">Setup</a></li>
+                        <li><a class="nav-link smooth-scroll" href="#about">About</a></li>
+                        <li><a class="nav-link smooth-scroll" href="#contactform">Contact us</a></li>
+                    {% else %}
+                        <li><a class="nav-link" href="/#setup">Setup</a></li>
+                        <li><a class="nav-link" href="/#about">About</a></li>
+                        <li><a class="nav-link" href="/#contactform">Contact us</a></li>
+                    {% endif %}
+                    {{ render_esi(controller('App\\Infrastructure\\Delivery\\Web\\DefaultController:securityBlock')) }}
+                </ul>
+            </div>
+            <!-- / -->
+
+        </div><!-- Container -->
+    </nav> <!-- Navbar -->
+</header>
+<!-- Header End -->
+
+<!-- Main -->
+<main>
+
+    {% for type, message in app.session.flashBag.all %}
+        <div class="alert alert-{{ type }}">
+            {{ message|first }}
+        </div>
+    {% endfor %}
+    {% block body %}
+    {% endblock body %}
+</main>
+
+<!--
+=======================
+Footer
+=======================
+-->
+<footer class="footer">
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-left">
+                    <p>© {{ date('now')|date('Y') }}
+                        <a href="#" style="color: #98a2aa;">Created at
+                            <a rel="nofollow" href="https://riverwaysoft.com">RiverWay</a>
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-6 text-center text-lg-right">
+                    <div style="display: inline; margin-right: 40px">
+                        <a href="https://www.producthunt.com/posts/upworkee?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-upworkee" target="_blank">
+                            <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=160664&theme=light"
+                                 alt="UpWorkee - Get more projects at Upwork with our instant notifications | Product Hunt Embed"
+                                 style="width: 200px; height: 54px;" width="200px" height="54px"
+                            />
+                        </a>
+                    </div>
+                    <span>
+                        <a href="/static/PrivacyPolicy.pdf">Privacy Policy</a>
+                    </span>
+                </div>
+
+                {#                <div class="col-lg-9 text-center text-lg-right">#}
+                {#                    <ul class="social-icons">#}
+                {#                        <li><a class="facebook" href="#"><i class="fab fa-facebook-square"></i></a></li>#}
+                {#                        <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>#}
+                {#                        <li><a class="google" href="#"><i class="fab fa-linkedin"></i></a></li>#}
+                {#                        <li><a class="linkedin" href="#"><i class="fab fa-instagram"></i></a></li>#}
+                {#                    </ul>#}
+                {#                </div>#}
+            </div> <!-- row -->
+        </div>
+    </div>
+</footer>
+{% if env=='prod' %}
+
+    <script src="//code.jivosite.com/widget.js" jv-id="JoDEnlyVnQ" async></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138239563-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {dataLayer.push(arguments);}
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-138239563-1');
+    </script>
+{% endif %}
+
+{% if is_granted('ROLE_USER') %}
+    <input type="hidden" id="extkey" value="{{ render_jwt() }}">
+{% endif %}
+{{ encore_entry_script_tags('app_scrypt') }}
+{% block javascripts %}
+{% endblock javascripts %}
+</body>
+<!-- ========== End of Body ========== -->
+</html>

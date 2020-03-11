@@ -1,0 +1,42 @@
+div.table {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .head {
+
+        > div {
+            border-bottom: 2px solid #dee2e6;
+        }
+    }
+
+    .body {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .head,
+    .row {
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 0;
+        width: 100%;
+
+        > div {
+            padding: 8px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .name {
+            flex-basis: 10%;
+        }
+
+        .search-url {
+            flex-basis: 80%;
+            word-break: break-all;
+        }
+
+        .btn-delete {
+            flex-basis: 10%;
+        }
+    }
+}

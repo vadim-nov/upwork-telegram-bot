@@ -1,0 +1,13 @@
+parameters:
+	level: 5
+	excludes_analyse:
+		- %currentWorkingDirectory%/src/Migrations/*
+		- %currentWorkingDirectory%/src/Infrastructure/Delivery/Web/*
+	ignoreErrors:
+#	    - '#Binary operation "+" between string|null and #'
+#	    -
+#	        message: '#If condition is always true#'
+#	        path: %currentWorkingDirectory%/src/Telegram/Command/UploadCommand.php
+#	    -
+#	        message: '#Left side of && is always true#'
+#	        path: %currentWorkingDirectory%/src/Telegram/Command/UploadCommand.php

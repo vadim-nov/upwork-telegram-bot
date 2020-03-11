@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Upgrade plan {{ order.plan }}{% endblock %}
+
+{% block body %}
+    <div class="wrap m-30px-t">
+        <div class="container">
+            <p><b>Order Ref:</b> {{ order.id }}</p>
+            <p><b>Status:</b> {{ order.paid ? 'Paid': 'Not paid' }}</p>
+            <p><b>Amount:</b> {{ order.plan.price|format_money }}</p>
+
+            <a class="btn btn-primary" href="{{ url }}">Upgrade plan </a>
+        </div>
+    </div>
+{% endblock %}

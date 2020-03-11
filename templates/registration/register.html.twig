@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="container login">
+        <div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="card__header">
+                            <div class="icon">
+                                <img src="/static/img/bot-48x48.png" alt="Upworkee bot">
+                            </div>
+                            <h3 class="title">Register</h3>
+                        </div>
+
+                        {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword) }}
+                        <div class="row">
+                            <div class="col-12 row m-0">
+                                {{ form_widget(registrationForm.terms) }}
+                                <a target="_blank" href="{{ path('terms') }}" class="policy">&nbsp Privacy
+                                    Policy</a>
+                            </div>
+                        </div>
+                        <hr />
+                        {{ form_rest(registrationForm) }}
+                        <div class="btn-wrap">
+                            <button class="btn btn-primary">Register</button>
+                            <div>Have an account already? <a href="{{ path('login') }}">Sign in</a></div>
+                        </div>
+                        {{ form_end(registrationForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

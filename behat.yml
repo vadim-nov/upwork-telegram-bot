@@ -1,0 +1,21 @@
+default:
+  suites:
+    default:
+      mink_session: symfony2
+      contexts:
+        - App\Tests\Context\FixtureContext: { workflows: "@workflow.registry", doctrine: "@doctrine", encoder: '@security.user_password_encoder.generic', domainEvent: '@knp_rad.domain_event.dispatcher.doctrine'}
+        - App\Tests\Context\FeatureContext: { kernel: '@kernel', doctrine: "@doctrine", JWTTokenManager: "@lexik_jwt_authentication.jwt_manager" }
+        - App\Tests\Context\CliContext:
+            kernel: '@kernel'
+        - App\Tests\Context\TelegramContext
+        - Behatch\Context\JsonContext
+  extensions:
+    Behat\Symfony2Extension:
+      kernel:
+        bootstrap: tests/bootstrap/bootstrap.php
+        class: App\Kernel
+    Behatch\Extension: ~
+    Behat\MinkExtension:
+      sessions:
+        symfony2:
+          symfony2: ~

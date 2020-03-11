@@ -1,0 +1,11 @@
+{% if is_granted('ROLE_USER') %}
+    <li>
+        <i class="fa fa-user"></i>
+        <a href="https://chrome.google.com/webstore/detail/upworkee/cobgonadnfcjnpfdjleagjhppaboaeda?hl=en-GB"> {{ app.user }}</a>
+    </li>
+    <li>
+        <a href="/logout" class="nav-link-btn"><i class="fa fa-sign-out-alt"></i> Logout</a>
+    </li>
+{% else %}
+    <li><a class="nav-link-btn" href="{{ path('login') }}">Sign in</a></li>
+{% endif %}

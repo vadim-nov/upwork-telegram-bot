@@ -1,0 +1,17 @@
+<div class="riverway-grid" id="riverway-grid-wrapper">
+    <div class="riverway-grid-header">
+        {% block riverway_grid_export_block %}
+        {% endblock %}
+
+        {% include '@RiverwayGrid/_paginator.html.twig' %}
+    </div>
+
+    {% include '@RiverwayGrid/_table.html.twig' %}
+
+    {% include '@RiverwayGrid/_paginator.html.twig' %}
+
+    <div class="riverway-grid-body">
+    </div>
+
+    {% block riverway_grid_footer %}{% endblock %}
+</div>

@@ -1,0 +1,3 @@
+web:
+    resource: ../../src/Infrastructure/Delivery/Web
+    type: annotation
